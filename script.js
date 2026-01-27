@@ -12,10 +12,6 @@ const ricette = [
         nome: "Insalata mista",
         ingredienti: ["lattuga", "pomodori", "olio"]
     }
-    {
-        nome: "Pasta al ragù",
-        ingredienti: ["pasta", "pomodori", "carne", "olio"]
-    }
 ];
 
 

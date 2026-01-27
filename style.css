@@ -76,6 +76,11 @@ button:hover {
     transform: scale(1.05);
 }
 
+button {
+    position: relative; /* assicura che il click non venga bloccato */
+    z-index: 1;
+}
+
 #messaggio {
     text-align: center;
     color: #2c7a7b;
