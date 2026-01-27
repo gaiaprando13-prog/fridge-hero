@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Fridge Hero</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class="container"></div>
+        <h1>🥦 Fridge Hero</h1>
+        <p>Inserisci gli ingredienti che hai nel frigo</p>
+
+        <input 
+            type="text" 
+            id="ingredientiInput" 
+            placeholder="es: uova, pomodori, formaggio">
+
+        <div class="buttons">    
+            <button onclick="trovaRicette()">Trova ricette</button>
+            <button onclick="svuota()">Svuota</button>
+            <button onclick="cercaRicetteOnline()">Ricette online</button>
+        </div>
+    
+
+        <p id="messaggio"></p>
+
+            <h2>Ricette possibili:</h2>
+            <ul id="risultati"></ul>
+
+     <script src="script.js"></script>
+    </div>
+
+</body>
+</html>
