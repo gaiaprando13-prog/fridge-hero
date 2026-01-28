@@ -75,10 +75,18 @@ function trovaRicette() {
         // ✅ Qui possiamo trasformare <li> in card
         li.className = "recipe-card";
         li.innerHTML = `
-            <strong style="color:${colore}">${r.nome}</strong><br>
-            Compatibilità: ${r.percentuale}%<br>
-            Ingredienti mancanti: ${r.mancanti.join(", ")}
-        `;
+    <div class="recipe-header">
+        <span class="recipe-icon">🍽️</span>
+        <strong style="color:${colore}">${r.nome}</strong>
+    </div>
+    <div class="recipe-body">
+        <div>Compatibilità: ${r.percentuale}%</div>
+        <div class="missing">
+            Mancanti: ${r.mancanti.length ? r.mancanti.join(", ") : "Nessuno 🎉"}
+        </div>
+    </div>
+`;
+
 
         risultati.appendChild(li);
     });

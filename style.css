@@ -65,14 +65,14 @@ button {
     border: none;
     border-radius: 8px;
     background-color: #2c7a7b;
-    color: #D8F279;
+    color: #ffffff;
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.2s, transform 0.2s;
 }
 
 button:hover {
-    background-color: ##D8F279;
+    background-color: #D8F279;
     transform: scale(1.05);
 }
 
@@ -113,6 +113,8 @@ ul {
     font-size: 16px;
 }
 
+
+
 /* ==========================
    Responsive mobile/desktop
 ========================== */
@@ -149,4 +151,148 @@ ul {
     .subtitle {
         color: #cbd5e0;
     }
+}
+
+@media (max-width: 600px) {
+    .container {
+        max-width: 100%;
+        margin: 10px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .recipe-card {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    button {
+        padding: 18px;
+        font-size: 1.1rem;
+    }
+
+    input {
+        padding: 18px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+}
+
+.recipe-card {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.05rem;
+}
+
+.recipe-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.recipe-icon {
+    font-size: 1.6rem;
+}
+
+.recipe-body {
+    color: #4a5568;
+}
+
+.missing {
+    margin-top: 5px;
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    button {
+        padding: 18px;
+        font-size: 1.1rem;
+        border-radius: 12px;
+    }
+
+    input {
+        padding: 18px;
+        font-size: 1.1rem;
+        border-radius: 12px;
+    }
+}
+
+button:active,
+.recipe-card:active {
+    transform: scale(0.97);
+    opacity: 0.9;
+}
+
+ul {
+    padding-bottom: 80px; /* spazio per il pollice */
+}
+
+body {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ==========================
+   Mobile first – FULL WIDTH
+========================== */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 0;
+        padding: 20px;
+        border-radius: 0; /* stile app */
+        box-shadow: none;
+    }
+}
+
+/* ==========================
+   Touch UX – Mobile
+========================== */
+@media (max-width: 600px) {
+    button {
+        padding: 18px;
+        font-size: 1.15rem;
+        border-radius: 14px;
+        min-height: 52px; /* area touch consigliata */
+    }
+
+    input {
+        padding: 18px;
+        font-size: 1.15rem;
+        border-radius: 14px;
+        min-height: 52px;
+    }
+
+    .buttons {
+        gap: 14px; /* più spazio tra i bottoni */
+    }
+}
+
+/* ==========================
+   Tap feedback
+========================== */
+button:active,
+.recipe-card:active {
+    transform: scale(0.96);
+    opacity: 0.9;
+}
+
+button,
+.recipe-card {
+    transition: transform 0.15s ease, opacity 0.15s ease;
 }
