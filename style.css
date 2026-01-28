@@ -9,7 +9,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #81e6d9, #edf2f7);
+    background: linear-gradient(135deg, #077268, #D8F279);
     min-height: 100vh;
     padding: 20px;
 }
@@ -19,9 +19,9 @@ body {
 ========================== */
 .container {
     background: white;
-    max-width: 500px;
+    max-width: 750px;
     margin: 40px auto;
-    padding: 25px;
+    padding: 50px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
@@ -65,14 +65,14 @@ button {
     border: none;
     border-radius: 8px;
     background-color: #2c7a7b;
-    color: white;
+    color: #D8F279;
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.2s, transform 0.2s;
 }
 
 button:hover {
-    background-color: #285e61;
+    background-color: ##D8F279;
     transform: scale(1.05);
 }
 

@@ -16,7 +16,6 @@ const ricette = [
 
 
 
-
 // 2. Funzione che parte quando clicchi il bottone
 function trovaRicette() {
     document.getElementById("messaggio").textContent = "";
