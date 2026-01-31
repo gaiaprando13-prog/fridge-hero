@@ -198,32 +198,28 @@ input:focus {
 .container {
     display: flex;
     flex-direction: column;
-    min-height: 80vh; /* Assicura che il contenitore sia abbastanza alto */
-    background: white;
-    max-width: 750px;
-    margin: 20px auto;
-    padding: 30px; /* Ridotto per mobile */
-    border-radius: 15px;
+    /* Forza il contenitore a essere alto almeno quanto lo schermo */
+    min-height: calc(100vh - 80px); 
     position: relative;
+    padding-bottom: 80px; /* Lascia spazio per i bottoni in fondo */
 }
 
-/* Questo elemento spinge tutto ciò che sta sotto verso il fondo */
+/* Questo div deve "mangiare" tutto lo spazio disponibile */
 #risultati {
     flex-grow: 1; 
-    margin-bottom: 20px;
 }
 
-/* Bottoni fissi o in fondo al contenuto */
 .buttons {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    margin-top: auto; /* Trucco magico: spinge i bottoni in fondo al flex container */
-    padding-top: 20px;
-    border-top: 1px solid #f0f0f0; /* Opzionale: una riga sottile per separarli */
+    
+    /* Posizionamento assoluto in fondo al container */
+    position: absolute;
+    bottom: 30px; 
+    left: 30px;
+    right: 30px;
     background: white;
-    position: sticky; /* Restano visibili anche se scrolli le ricette */
-    bottom: 0;
 }
 
 @media (max-width: 480px) {
@@ -262,7 +258,19 @@ input:focus {
     }
 }
 
+@media (max-width: 480px) {
+    .container {
+        min-height: calc(100vh - 20px);
+        padding: 20px;
+        padding-bottom: 90px;
+    }
 
+    .buttons {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+    }
+}
 
 
 
