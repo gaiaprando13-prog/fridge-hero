@@ -7,25 +7,34 @@
 </head>
 <body>
  <div class="container">
-        <h1>🥦 FridgeHERO</h1>
-        <p>Inserisci gli ingredienti che hai nel frigo</p>
+        <h1><em>Fridge</em>HERO</h1>
+        <h2 class="comand"><strong>Dimmi cosa c'è nel tuo frigo e ti sorprenderò</strong></h2>
+        <br>
 
         <input 
             type="text" 
             id="ingredientiInput" 
             placeholder="es: uova, pomodori, formaggio">
 
-        <div class="buttons">
+        <!-- <div class="buttons">
             <button onclick="trovaRicette()">Trova ricette</button>
-            <button onclick="cercaRicetteOnline()">Ricette online</button>
             <button onclick="svuota()">Svuota</button>
-        </div>
+        </div> -->
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+        <div class="buttons">
+            <button id="btn-cerca" onclick="trovaRicette()" class="btn-main">Trova ricette</button>
+            <button id="btn-svuota" onclick="svuota()" class="btn-icon" aria-label="Svuota">
+                <i class="fa-solid fa-trash-can"></i>
+            </button>
+        </div>
         <p id="messaggio"></p>
 
-            <h2>Ricette possibili:</h2>
+            <!-- <h2>Ricette possibili</h2> -->
             <ul id="risultati"></ul>
 
+     <script src="db-ricette.js"></script>
      <script src="script.js"></script>
  </div>
 

@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "helvetica", sans-serif;
     background: linear-gradient(135deg, #077268, #D8F279);
     min-height: 100vh;
     padding: 20px;
@@ -30,8 +30,12 @@ body {
    Titolo e sottotitolo
 ========================== */
 h1 {
+    font-family: bebas neue;
+    font-size: 120px;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    color: #D8F279;
+    text-shadow: #077268 2px 2px 4px;
 }
 
 .subtitle {
@@ -40,9 +44,21 @@ h1 {
     margin-bottom: 20px;
 }
 
+.comand {
+    font-family: "Lexend Deca", sans-serif;
+    text-align: center;
+    font-style: italic;
+    color: #077268;
+    font-size: 22px;
+    margin-bottom: 17px;
+    
+}
+
+
+
 /* ==========================
    Input e bottoni
-========================== */
+==========================
 input {
     width: 100%;
     padding: 12px;
@@ -63,12 +79,12 @@ button {
     flex: 1;
     padding: 10px;
     border: none;
-    border-radius: 8px;
+    border-radius: 100px;
     background-color: #2c7a7b;
     color: #ffffff;
     cursor: pointer;
     font-size: 14px;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.5s, transform 0.5s;
 }
 
 button:hover {
@@ -77,7 +93,7 @@ button:hover {
 }
 
 button {
-    position: relative; /* assicura che il click non venga bloccato */
+    position: relative; /* assicura che il click non venga bloccato 
     z-index: 1;
 }
 
@@ -85,7 +101,173 @@ button {
     text-align: center;
     color: #2c7a7b;
     margin-bottom: 10px;
+} */
+
+
+/* ==========================
+   Input e bottoni (Aggiornato)
+========================== */
+input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 15px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
 }
+
+input:focus {
+    border-color: #077268;
+}
+
+.buttons {
+    display: flex; /* Affianca i bottoni */
+    flex-direction: row; /* Forza la riga */
+    gap: 12px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.btn-main {
+    flex: 8; /* Prende la maggior parte dello spazio */
+    padding: 14px;
+    border: none;
+    border-radius: 100px;
+    background-color: #2c7a7b;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-icon {
+    flex: 1; /* Prende poco spazio */
+    width: 50px;
+    height: 50px;
+    min-width: 50px; /* Evita che diventi un'ellisse */
+    border: 2px solid #b8da3e;
+    border-radius: 100px; /* Cerchio perfetto */
+    background-color: white;
+    color: #b8da3e;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.2s ease;
+}
+
+/* Hover effects */
+.btn-main:hover, .btn-icon:hover {
+    background-color: #b8da3e;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   RESPONSIVE (Mobile)
+========================== */
+@media (max-width: 600px) {
+    .container {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 100px; /* Ridimensiona il logo gigante su mobile */
+    }
+
+    .comand {
+        font-size: 20px;
+    }
+
+    .buttons {
+        gap: 18px;
+    }
+
+    .btn-main {
+        font-size: 20px;
+        padding: 12px;
+    }
+}
+
+/* Modifica il container per gestire lo spazio verticale */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh; /* Assicura che il contenitore sia abbastanza alto */
+    background: white;
+    max-width: 750px;
+    margin: 20px auto;
+    padding: 30px; /* Ridotto per mobile */
+    border-radius: 15px;
+    position: relative;
+}
+
+/* Questo elemento spinge tutto ciò che sta sotto verso il fondo */
+#risultati {
+    flex-grow: 1; 
+    margin-bottom: 20px;
+}
+
+/* Bottoni fissi o in fondo al contenuto */
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: auto; /* Trucco magico: spinge i bottoni in fondo al flex container */
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0; /* Opzionale: una riga sottile per separarli */
+    background: white;
+    position: sticky; /* Restano visibili anche se scrolli le ricette */
+    bottom: 0;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+        margin: 10px auto;
+        min-height: 95vh; /* Quasi tutta l'altezza dello schermo */
+    }
+
+    h1 {
+        font-size: 60px; /* Ridotto drasticamente per mobile */
+    }
+
+    .comand {
+        font-size: 16px;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .btn-main {
+        font-size: 14px;
+        padding: 12px 5px;
+    }
+
+    .btn-icon {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+    }
+}
+
+
+
+
+
+
+
 
 /* ==========================
    Lista ricette
@@ -115,184 +297,5 @@ ul {
 
 
 
-/* ==========================
-   Responsive mobile/desktop
-========================== */
-@media (min-width: 600px) {
-    .buttons {
-        flex-direction: row;
-    }
-
-    button {
-        font-size: 15px;
-    }
-}
-
-/* ==========================
-   Dark Mode
-========================== */
-@media (prefers-color-scheme: dark) {
-    body {
-        background: #1a202c;
-        color: #edf2f7;
-    }
-    .container {
-        background: #2d3748;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    }
-    input, button, .recipe-card {
-        background: #4a5568;
-        color: #edf2f7;
-        border: none;
-    }
-    button:hover {
-        background-color: #2c7a7b;
-    }
-    .subtitle {
-        color: #cbd5e0;
-    }
-}
-
-@media (max-width: 600px) {
-    .container {
-        max-width: 100%;
-        margin: 10px;
-        padding: 20px;
-    }
-}
-
-@media (max-width: 600px) {
-    .recipe-card {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 600px) {
-    button {
-        padding: 18px;
-        font-size: 1.1rem;
-    }
-
-    input {
-        padding: 18px;
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2.4rem;
-    }
-}
-
-.recipe-card {
-    width: 100%;
-    padding: 18px;
-    font-size: 1.05rem;
-}
-
-.recipe-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-}
-
-.recipe-icon {
-    font-size: 1.6rem;
-}
-
-.recipe-body {
-    color: #4a5568;
-}
-
-.missing {
-    margin-top: 5px;
-    font-style: italic;
-}
-
-@media (max-width: 600px) {
-    button {
-        padding: 18px;
-        font-size: 1.1rem;
-        border-radius: 12px;
-    }
-
-    input {
-        padding: 18px;
-        font-size: 1.1rem;
-        border-radius: 12px;
-    }
-}
-
-button:active,
-.recipe-card:active {
-    transform: scale(0.97);
-    opacity: 0.9;
-}
-
-ul {
-    padding-bottom: 80px; /* spazio per il pollice */
-}
-
-body {
-    -webkit-tap-highlight-color: transparent;
-}
 
 
-/* ==========================
-   Mobile first – FULL WIDTH
-========================== */
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
-
-    .container {
-        max-width: 100%;
-        margin: 0;
-        padding: 20px;
-        border-radius: 0; /* stile app */
-        box-shadow: none;
-    }
-}
-
-/* ==========================
-   Touch UX – Mobile
-========================== */
-@media (max-width: 600px) {
-    button {
-        padding: 18px;
-        font-size: 1.15rem;
-        border-radius: 14px;
-        min-height: 52px; /* area touch consigliata */
-    }
-
-    input {
-        padding: 18px;
-        font-size: 1.15rem;
-        border-radius: 14px;
-        min-height: 52px;
-    }
-
-    .buttons {
-        gap: 14px; /* più spazio tra i bottoni */
-    }
-}
-
-/* ==========================
-   Tap feedback
-========================== */
-button:active,
-.recipe-card:active {
-    transform: scale(0.96);
-    opacity: 0.9;
-}
-
-button,
-.recipe-card {
-    transition: transform 0.15s ease, opacity 0.15s ease;
-}

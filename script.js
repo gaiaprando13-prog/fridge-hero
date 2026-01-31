@@ -1,21 +1,3 @@
-// 1. "Database" di ricette (finto, ma realistico)
-const ricette = [
-    {
-        nome: "Pasta al pomodoro",
-        ingredienti: ["pasta", "pomodori", "olio"]
-    },
-    {
-        nome: "Frittata",
-        ingredienti: ["uova", "formaggio"]
-    },
-    {
-        nome: "Insalata mista",
-        ingredienti: ["lattuga", "pomodori", "olio"]
-    }
-];
-
-
-
 // 2. Funzione che parte quando clicchi il bottone
 function trovaRicette() {
     document.getElementById("messaggio").textContent = "";
@@ -80,9 +62,9 @@ function trovaRicette() {
         <strong style="color:${colore}">${r.nome}</strong>
     </div>
     <div class="recipe-body">
-        <div>Compatibilità: ${r.percentuale}%</div>
+        <div>Fattibilità: ${r.percentuale}%</div>
         <div class="missing">
-            Mancanti: ${r.mancanti.length ? r.mancanti.join(", ") : "Nessuno 🎉"}
+            Ingredienti mancanti: ${r.mancanti.length ? r.mancanti.join(", ") : "Nessuno 🎉"}
         </div>
     </div>
 `;
@@ -96,39 +78,9 @@ function trovaRicette() {
     }
 }
 
-
-
 // 3️⃣ Funzioni aggiuntive (UX)
 function svuota() {
     document.getElementById("ingredientiInput").value = "";
     document.getElementById("risultati").innerHTML = "";
     document.getElementById("messaggio").textContent = "Lista svuotata ✅";
 }
-
-async function cercaRicetteOnline() {
-    const input = document.getElementById("ingredientiInput").value;
-    const ingrediente = input.split(",")[0].trim();
-
-    const risultati = document.getElementById("risultati");
-    risultati.innerHTML = "<li>Caricamento...</li>";
-
-    const response = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingrediente}`
-    );
-
-    const data = await response.json();
-
-    risultati.innerHTML = "";
-
-    if (!data.meals) {
-        risultati.innerHTML = "<li>Nessuna ricetta trovata online 😢</li>";
-        return;
-    }
-
-    data.meals.slice(0, 5).forEach(meal => {
-        const li = document.createElement("li");
-        li.textContent = meal.strMeal;
-        risultati.appendChild(li);
-    });
-}
-
