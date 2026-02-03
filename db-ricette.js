@@ -10,7 +10,7 @@ const ricette = [
     },
     {
         nome: "Pasta al salmone",
-        ingredienti: ["pasta", "salmone","panna"] 
+        ingredienti: ["pasta", "salmone"] 
     },
      {
         nome: "Pasta aglio e olio",
@@ -32,5 +32,17 @@ const ricette = [
     {
         nome: "Pollo al curry",
         ingredienti: ["pollo", "curry", "riso"]
+    },
+    {
+        nome: "Scaloppine al limone",
+        ingredienti: ["pollo", "limone", "olio"]
+    },
+    {
+        nome: "Pollo e paprika",
+        ingredienti: ["pollo", "paprika", "olio"]
+    },
+    {
+        nome: "Pollo alle prugne",
+        ingredienti: ["pollo", "prugne", "olio"]
     }
 ];

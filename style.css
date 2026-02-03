@@ -1,309 +1,236 @@
-/* ==========================
-   Reset e base
-========================== */
+/* ==========================================
+   1. RESET E LAYOUT GLOBALE (PAGINA STATICA)
+   ========================================== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: "helvetica", sans-serif;
-    background: linear-gradient(135deg, #077268, #D8F279);
+html, body {
+    height: 100%;
+    overflow-x: hidden; /* Blocca lo scroll di tutta la pagina */
+    font-family: "Helvetica", sans-serif;
+    background-color: #F6DB4C;
+}
+
+.main-wrapper {
+    display: flex;
     min-height: 100vh;
     padding: 20px;
+    gap: 20px;
+    background-color: #F6DB4C;
 }
 
-/* ==========================
-   Container centrale
-========================== */
+/* ==========================================
+   2. SEZIONE IMMAGINE (SINISTRA)
+   ========================================== */
+.image-section {
+    flex: 1;
+    border-radius: 25px;
+    overflow: hidden;
+    display: block;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================
+   3. CONTENITORE BIANCO (DESTRA)
+   ========================================== */
 .container {
-    background: white;
-    max-width: 750px;
-    margin: 40px auto;
-    padding: 50px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    flex: 1;
+    background: #ffffff;
+    border-radius: 25px;
+    border: 3px solid #077268;
+    box-shadow: 0 10px 30px rgba(7, 114, 104, 0.1);
+    
+    padding: 40px;
+    display: flex;
+    flex-direction: column; /* Gli elementi vanno in verticale */
+    height: 100%;
+    overflow: hidden; /* Il box bianco non deve scorrere */
 }
 
-/* ==========================
-   Titolo e sottotitolo
-========================== */
+/* ==========================================
+   4. TESTI (LOGO E SLOGAN)
+   ========================================== */
 h1 {
-    font-family: bebas neue;
-    font-size: 120px;
-    text-align: center;
-    margin-bottom: 5px;
-    color: #D8F279;
-    text-shadow: #077268 2px 2px 4px;
-}
-
-.subtitle {
-    text-align: center;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.comand {
-    font-family: "Lexend Deca", sans-serif;
+    font-family: "inter", sans-serif;
+    font-size: 60px;
+    font-weight: 900;
     text-align: center;
     font-style: italic;
-    color: #077268;
-    font-size: 22px;
-    margin-bottom: 17px;
-    
+    text-transform: uppercase;
+    color: #F6DB4C;
+    /* text-shadow: #077268 1px 2px 2px; */
+    margin-bottom: 5px;
+
 }
 
-
-
-/* ==========================
-   Input e bottoni
-==========================
-input {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    margin-bottom: 15px;
-    font-size: 16px;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-button {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    border-radius: 100px;
-    background-color: #2c7a7b;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.5s, transform 0.5s;
-}
-
-button:hover {
-    background-color: #D8F279;
-    transform: scale(1.05);
-}
-
-button {
-    position: relative; /* assicura che il click non venga bloccato 
-    z-index: 1;
-}
-
-#messaggio {
+.slogan {
+    font-family: "lexend deca", sans-serif;
     text-align: center;
-    color: #2c7a7b;
-    margin-bottom: 10px;
-} */
-
-
-/* ==========================
-   Input e bottoni (Aggiornato)
-========================== */
-input {
-    width: 100%;
-    padding: 15px;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    margin-bottom: 15px;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s;
+    color: #077268;
+    font-size: 20px;
+    margin-bottom: 30px;
 }
 
-input:focus {
-    border-color: #077268;
-}
 
-.buttons {
-    display: flex; /* Affianca i bottoni */
-    flex-direction: row; /* Forza la riga */
-    gap: 12px;
-    margin-bottom: 20px;
-    align-items: center;
-}
 
-.btn-main {
-    flex: 8; /* Prende la maggior parte dello spazio */
-    padding: 14px;
-    border: none;
-    border-radius: 100px;
-    background-color: #2c7a7b;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.btn-icon {
-    flex: 1; /* Prende poco spazio */
-    width: 50px;
-    height: 50px;
-    min-width: 50px; /* Evita che diventi un'ellisse */
-    border: 2px solid #b8da3e;
-    border-radius: 100px; /* Cerchio perfetto */
-    background-color: white;
-    color: #b8da3e;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    transition: all 0.2s ease;
-}
-
-/* Hover effects */
-.btn-main:hover, .btn-icon:hover {
-    background-color: #b8da3e;
-    color: #ffffff;
-    transform: translateY(-2px);
-}
-
-/* ==========================
-   RESPONSIVE (Mobile)
-========================== */
-@media (max-width: 600px) {
-    .container {
-        margin: 10px;
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 100px; /* Ridimensiona il logo gigante su mobile */
-    }
-
-    .comand {
-        font-size: 20px;
-    }
-
-    .buttons {
-        gap: 18px;
-    }
-
-    .btn-main {
-        font-size: 20px;
-        padding: 12px;
-    }
-}
-
-/* Modifica il container per gestire lo spazio verticale */
-.container {
-    display: flex;
-    flex-direction: column;
-    /* Forza il contenitore a essere alto almeno quanto lo schermo */
-    min-height: calc(100vh - 80px); 
-    position: relative;
-    padding-bottom: 80px; /* Lascia spazio per i bottoni in fondo */
-}
-
-/* Questo div deve "mangiare" tutto lo spazio disponibile */
+/* ==========================================
+   5. AREA RISULTATI (L'UNICA CHE SCORRE)
+   ========================================== */
 #risultati {
-    flex-grow: 1; 
-}
-
-.buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    
-    /* Posizionamento assoluto in fondo al container */
-    position: absolute;
-    bottom: 30px; 
-    left: 30px;
-    right: 30px;
-    background: white;
-}
-
-@media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-
-    .container {
-        padding: 20px;
-        margin: 10px auto;
-        min-height: 95vh; /* Quasi tutta l'altezza dello schermo */
-    }
-
-    h1 {
-        font-size: 60px; /* Ridotto drasticamente per mobile */
-    }
-
-    .comand {
-        font-size: 16px;
-    }
-
-    input {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .btn-main {
-        font-size: 14px;
-        padding: 12px 5px;
-    }
-
-    .btn-icon {
-        width: 45px;
-        height: 45px;
-        min-width: 45px;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        min-height: calc(100vh - 20px);
-        padding: 20px;
-        padding-bottom: 90px;
-    }
-
-    .buttons {
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
-    }
-}
-
-
-
-
-
-
-/* ==========================
-   Lista ricette
-========================== */
-ul {
+    flex: 1; /* Prende tutto lo spazio centrale */
+    overflow-y: auto; /* Attiva lo scroll verticale */
     list-style: none;
-    padding: 0;
+    padding-right: 10px;
+    margin-bottom: 20px;
 }
 
+/* Card delle ricette */
 .recipe-card {
     background: #f7fafc;
     border-radius: 12px;
     padding: 15px;
     margin-bottom: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s;
 }
 
 .recipe-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
-.recipe-card strong {
+/* ==========================================
+   6. AREA INPUT E BOTTONI (FISSA IN FONDO)
+   ========================================== */
+.search-area {
+    margin-top: auto; /* Spinge l'area in fondo */
+    background: white;
+    padding-top: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 100px;
+    border: 1px solid #e2e8f0;
     font-size: 16px;
+    outline: none;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #F6DB4C;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-main {
+    flex: 4;
+    padding: 14px;
+    border: none;
+    border-radius: 100px;
+    background-color: #077268;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-icon {
+    flex: 1;
+    border: 1px solid #e2e8f0;
+    border-radius: 100px;
+    background-color: white;
+    color: #077268;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.btn-main:hover, .btn-icon:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+
+/* Personalizzazione barra di scorrimento per i risultati */
+#risultati::-webkit-scrollbar {
+    width: 8px;
+}
+
+#risultati::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#risultati::-webkit-scrollbar-thumb {
+    background: #077268; /* Il verde del tuo logo */
+    border-radius: 10px;
+}
+
+#risultati::-webkit-scrollbar-thumb:hover {
+    background: #F6DB4C; /* Cambia colore quando ci passi sopra */
 }
 
 
 
 
 
+
+
+/* --- MEDIA QUERIES PER MOBILE --- */
+
+@media (max-width: 768px) {
+    .main-wrapper {
+        flex-direction: column; /* Gli elementi vanno uno sopra l'altro */
+        padding: 10px;
+        height: auto;
+        overflow: visible;
+    }
+
+    .image-section {
+        display: none; /* Nascondiamo l'immagine su mobile per risparmiare spazio */
+    }
+
+    .container {
+        padding: 20px;
+        height: auto; /* Permettiamo al contenitore di crescere */
+        min-height: 90vh;
+        border-width: 2px;
+    }
+
+    h1 {
+        font-size: 40px; /* Testo più piccolo su mobile */
+    }
+
+    .slogan {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    #risultati {
+        overflow-y: visible; /* Su mobile è meglio lo scroll di pagina che quello interno */
+        max-height: none; 
+    }
+    
+    .search-area {
+        position: sticky; /* L'area di ricerca rimane visibile in fondo */
+        bottom: 0;
+        background: white;
+        padding-bottom: 10px;
+        border-top: 1px solid #eee;
+    }
+}

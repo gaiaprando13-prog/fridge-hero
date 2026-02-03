@@ -2,41 +2,38 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>FridgeHERO</title>
+    <title>Fridgehero</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- per rendere il sito responsive su dispositivi mobili -->
 </head>
 <body>
- <div class="container">
-        <h1><em>Fridge</em>HERO</h1>
-        <h2 class="comand"><strong>Dimmi cosa c'è nel tuo frigo e ti sorprenderò</strong></h2>
-        <br>
 
-        <input 
-            type="text" 
-            id="ingredientiInput" 
-            placeholder="es: uova, pomodori, formaggio">
-
-        <!-- <div class="buttons">
-            <button onclick="trovaRicette()">Trova ricette</button>
-            <button onclick="svuota()">Svuota</button>
-        </div> -->
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-        <div class="buttons">
-            <button id="btn-cerca" onclick="trovaRicette()" class="btn-main">Trova ricette</button>
-            <button id="btn-svuota" onclick="svuota()" class="btn-icon" aria-label="Svuota">
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
+    <div class="main-wrapper">
+        
+        <div class="image-section">
+            <img src="img/rumman-amin-LNn6O_Mt730-unsplash.jpg" alt="Cibo fresco">
         </div>
-        <p id="messaggio"></p>
 
-            <!-- <h2>Ricette possibili</h2> -->
+        <div class="container">
+            <h1>FridgeHero</h1>
+            <p class="slogan">Dimmi cosa c'è nel tuo frigo...</p>
+
             <ul id="risultati"></ul>
-
-     <script src="db-ricette.js"></script>
-     <script src="script.js"></script>
- </div>
+            
+        <div class="search-area">
+            <input type="text" id="ingredientiInput" placeholder="...">
+        
+            <div class="buttons">
+                <button onclick="trovaRicette()" class="btn-main">Trova ricette</button>
+                <button onclick="svuota()" class="btn-icon"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+        </div>
+</div>
+   
+    <script src="db-ricette.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
